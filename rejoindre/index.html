@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#111111">
+  <title>Rejoindre KOR</title>
+  <link rel="stylesheet" href="/flow.css">
+</head>
+<body>
+  <header class="flow-header">
+    <a href="/"><img src="/kor-logo.png" alt="KOR"></a>
+    <a href="/">← Retour au site</a>
+  </header>
+  <main class="flow-main">
+    <p class="eyebrow">ACCÈS ANTICIPÉ · KOR</p>
+    <h1>On commence<br>par ton vrai objectif.</h1>
+    <p class="lead">Les premiers accès KOR sont ouverts progressivement. Dis-nous ce que tu veux faire évoluer : on t’écrira dès que ton espace pourra être créé.</p>
+    <div class="split">
+      <section class="steps">
+        <div><b>01</b><span><h2>Tu nous donnes le cap</h2><p>Pas besoin de raconter toute ta vie : un objectif honnête suffit pour commencer.</p></span></div>
+        <div><b>02</b><span><h2>On prépare les premiers accès</h2><p>KOR ouvre par petits groupes pour pouvoir apprendre de chaque usage réel.</p></span></div>
+        <div><b>03</b><span><h2>Tu reçois la suite par e-mail</h2><p>Ton espace arrivera quand il pourra vraiment t’aider, pas avant.</p></span></div>
+      </section>
+      <form class="form-card" id="kor-access-form" action="https://hook.eu1.make.com/nih181bj8umofdvkwm1odhdzcpblqpqg" method="POST" target="kor-webhook-frame">
+        <input type="hidden" name="source" value="kor-s.com/rejoindre">
+        <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="display:none">
+        <h2>Demander mon accès</h2>
+        <p>Ta demande est envoyée directement à l’équipe KOR.</p>
+        <label>Prénom<input name="prenom" required autocomplete="given-name" placeholder="Ton prénom"></label>
+        <label>E-mail<input name="email" required type="email" autocomplete="email" placeholder="toi@exemple.com"></label>
+        <label>Domaine<select name="domaine"><option>Sport</option><option>Études</option><option>Nutrition</option><option>Business</option><option>Autre objectif</option></select></label>
+        <label>Ton objectif<textarea name="objectif" required placeholder="Ex. préparer mes partiels sans tout repousser"></textarea></label>
+        <label>Ce que KOR devrait savoir<textarea name="message" placeholder="Ton rythme, une contrainte, ce qui te bloque aujourd’hui…"></textarea></label>
+        <button>Envoyer ma demande <span>→</span></button>
+        <small>Ta demande arrive directement à l’équipe KOR. Aucun compte ni paiement n’est créé à ce stade.</small>
+      </form>
+    </div>
+  </main>
+  <iframe title="Envoi sécurisé" name="kor-webhook-frame" style="display:none"></iframe>
+  <script>
+    const form = document.querySelector('#kor-access-form');
+    form.addEventListener('submit', () => {
+      const button = form.querySelector('button');
+      button.disabled = true;
+      button.textContent = 'Envoi en cours…';
+      window.setTimeout(() => {
+        window.location.assign('/rejoindre/merci/');
+      }, 700);
+    });
+  </script>
+</body>
+</html>
